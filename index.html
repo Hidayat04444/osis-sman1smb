@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visi Misi OSIS Smansa</title>
+    <title>OSIS SMA Negeri 1 Sembakung</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -26,7 +26,7 @@
         h2 {
             color: #1e90ff;
         }
-        .visi, .misi, .info, .kontak {
+        .section {
             margin-bottom: 30px;
             padding: 15px;
             background-color: #e6f7ff;
@@ -58,53 +58,88 @@
         button:hover {
             background-color: #187bcd;
         }
-        .social a {
+        a {
             text-decoration: none;
             color: #1e90ff;
-            margin-right: 10px;
         }
-        .social a:hover {
+        a:hover {
             text-decoration: underline;
+        }
+        .form-group {
+            margin: 10px 0;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>OSIS SMANSA</h1>
-        <p>Smansa Baba Berkarya | Smansa Baba Beragama | Smansa Baba Bersih dan Menyenangkan</p>
+        <h1>OSIS SMA Negeri 1 Sembakung</h1>
+        <p>Wadah Inspirasi dan Aspirasi Pelajar SMANSA</p>
     </header>
     <div class="container">
-        <div class="visi">
+        <div class="section">
             <h2>Visi</h2>
-            <p>Mewujudkan ruang pemersatu siswa dan siswi yang hakiki, inklusif, kontributif, dan kreatif. Menciptakan lingkungan sekolah yang harmonis, inspiratif, dan berdaya saing tinggi.</p>
+            <p>Mewujudkan siswa yang unggul, berkarakter, dan peduli lingkungan dalam suasana belajar yang harmonis.</p>
         </div>
-        <div class="misi">
+        <div class="section">
             <h2>Misi</h2>
             <ol>
-                <li>Mengadakan kegiatan untuk pengembangan religius, bakat, potensi, dan kreativitas siswa.</li>
-                <li>Melakukan kegiatan melestarikan lingkungan sekolah dengan cara menyenangkan.</li>
-                <li>Memberi ruang kepada peserta didik untuk menyampaikan pendapat dan saran guna terlaksananya suatu kegiatan.</li>
-                <li>Mengoptimalkan peran media sosial untuk menunjang kegiatan sekolah.</li>
+                <li>Meningkatkan kegiatan religius, bakat, dan kreativitas siswa.</li>
+                <li>Membudayakan hidup bersih dan peduli lingkungan di sekolah.</li>
+                <li>Memfasilitasi penyampaian aspirasi siswa secara terbuka dan responsif.</li>
+                <li>Mengoptimalkan penggunaan media sosial untuk informasi kegiatan OSIS.</li>
             </ol>
         </div>
-        <div class="info">
+        <div class="section">
             <h2>Struktur OSIS</h2>
-            <p><b>Ketua OSIS:</b> Rizky Andra Maulidianysah</p>
-            <p><b>Wakil Ketua OSIS:</b> Satrio</p>
-            <p><b>Struktur lainnya:</b> Masih dalam pembentukan.</p>
+            <p><b>Ketua:</b> Rizky Andra Maulidianysah</p>
+            <p><b>Wakil Ketua:</b> Satrio</p>
+            <p><b>Struktur Lain:</b> Sedang dibentuk</p>
         </div>
-        <div class="kontak">
+        <div class="section">
             <h2>Kontak dan Media Sosial</h2>
-            <p><b>Instagram OSIS:</b> <a href="https://instagram.com/osissman1smb" target="_blank">@osissman1smb</a></p>
-            <p><b>Kontak OSIS:</b> +62 856-5102-9522</p>
+            <p><b>Instagram:</b> <a href="https://instagram.com/osissman1smb" target="_blank">@osissman1smb</a></p>
+            <p><b>WhatsApp:</b> <a href="https://wa.me/6285651029522" target="_blank">+62 856-5102-9522</a></p>
+        </div>
+        <div class="section">
+            <h2>Aspirasi Digital</h2>
+            <p>Sampaikan saran dan aspirasi Anda kepada OSIS SMANSA melalui formulir di bawah ini. Pesan Anda akan langsung terkirim ke WhatsApp kami.</p>
+            <form onsubmit="kirimPesan(event)">
+                <div class="form-group">
+                    <label for="aspirasi">Tulis Aspirasi Anda:</label>
+                    <textarea id="aspirasi" placeholder="Tulis saran atau aspirasi di sini..."></textarea>
+                </div>
+                <button type="submit">Kirim Aspirasi</button>
+            </form>
         </div>
         <div class="button-container">
-            <button onclick="alert('Terima kasih telah mendukung OSIS Smansa!')">Dukung Kami</button>
-            <button onclick="location.href='https://instagram.com/osissman1smb'">Follow Instagram</button>
+            <button onclick="location.href='https://instagram.com/osissman1smb'">Kunjungi Instagram</button>
+            <button onclick="location.href='https://wa.me/6285651029522'">Hubungi WhatsApp</button>
         </div>
     </div>
     <footer>
         &copy; 2024 OSIS SMANSA. All Rights Reserved.
     </footer>
+    <script>
+        function kirimPesan(event) {
+            event.preventDefault();
+            const aspirasi = document.getElementById('aspirasi').value;
+            if (aspirasi.trim() === '') {
+                alert('Silakan tulis aspirasi Anda sebelum mengirim.');
+                return;
+            }
+            const nomorWA = '6285651029522';
+            const pesan = Halo OSIS SMANSA, saya ingin menyampaikan aspirasi:\n\n${aspirasi};
+            const url = https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)};
+            window.open(url, '_blank');
+        }
+    </script>
 </body>
 </html>
